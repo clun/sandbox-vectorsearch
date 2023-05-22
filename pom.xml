@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.datastax</groupId>
+  <artifactId>sandbox-vectorsearch</artifactId>
+  <name>sandbox-vectorsearch</name>
+  <version>1.0-SNAPSHOT</version>
+  <description>Read and Write to Cassandra with CEP-30</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <slf4j.version>2.0.7</slf4j.version>
+    <logback.version>1.4.7</logback.version>
+    <cassandra-driver.version>3.11.3</cassandra-driver.version>
+    <junit-platform.version>1.9.2</junit-platform.version>
+    <junit-jupiter.version>5.9.2</junit-jupiter.version>
+    <maven.plugin.compiler.source>17</maven.plugin.compiler.source>
+    <maven.plugin.compiler.target>17</maven.plugin.compiler.target>
+    <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+  </properties>
+  
+  <dependencies>
+
+    <dependency>
+      <groupId>com.datastax.cassandra</groupId>
+      <artifactId>cassandra-driver-core</artifactId>
+      <version>${cassandra-driver.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.datastax.cassandra</groupId>
+      <artifactId>cassandra-driver-mapping</artifactId>
+      <version>${cassandra-driver.version}</version>
+    </dependency>
+
+    <!-- Unit tests -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit-jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit-jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-runner</artifactId>
+      <version>${junit-platform.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${maven.plugin.compiler.source}</source>
+          <target>${maven.plugin.compiler.target}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <organization>
+    <name>DataStax</name>
+    <url>http://datastax.com</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+</project>
